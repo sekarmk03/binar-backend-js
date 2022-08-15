@@ -1,0 +1,5 @@
+BACA dan SIMPAN "massa benda" di variable (m)
+BACA dan SIMPAN "percepatan benda" di variable (a)
+HITUNG "massa benda" dikali "percepatan benda"
+SIMPAN hasil perhitungan di variable(RESULTAN)
+TAMPILKAN hasil perhitungan(RESULTAN)
