@@ -1,0 +1,10 @@
+READ and SAVE "radius"
+
+IF "radius" % 7 == 0
+	DO "PHI = 22/7"
+ELSE 
+	DO "PHI = 3.14"
+
+COMPUTE "2" multiplication "PHI" multiplication "radius"
+SAVE previous computation result
+SHOW the computation result
