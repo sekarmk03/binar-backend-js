@@ -21,4 +21,4 @@ m = massa benda (kg)
 
 a = percepatan benda (m/s2)
 
-Berdasarkan keterangan di atas, buatlah sebuah (1-)algoritma(.txt), (2-)pseudocode(.txt) dan (3-)flowchart(.jpeg) untuk menghitung resultan gaya pada sebuah mobil yang memiliki massa benda 600 kg dan ketika didorong oleh tiga orang percepatannya adalah 2 m/s2!
+Berdasarkan keterangan di atas, buatlah sebuah (2-)algoritma(.txt), (2-)pseudocode(.txt), (2-)flowchart(.jpeg) dan (2-)program(.js) untuk menghitung resultan gaya pada sebuah mobil yang memiliki massa benda 600 kg dan ketika didorong oleh tiga orang percepatannya adalah 2 m/s2!
