@@ -12,8 +12,11 @@ Pseudocode Keliling Lingkaran
 1. Mulai
 2. Deklarasi :
 	const pi = 3.14
-	let r = await input("Masukan Jari-Jari : ");
 3. Deskripsi :
+	let r = await input("Masukan Jari-Jari : ");
 	read(r)
+	function hasil(r) => {
 	hasil <- 2 * pi * r
+	return write(hasil)
+	}
 	write(hasil)
