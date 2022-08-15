@@ -1,0 +1,8 @@
+Algoritma Menghitung Keliling Lingkaran
+
+1. Mulai
+2. Definisi Pi = 3.14
+3. Masukan inputan berupa jari-jari
+4. Hitung keliling lingkaran = 2 * Pi * jari-jari
+5. Cetak keliling lingkaran
+6. Selesai
