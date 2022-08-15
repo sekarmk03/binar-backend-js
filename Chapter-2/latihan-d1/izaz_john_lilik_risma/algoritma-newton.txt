@@ -1,0 +1,8 @@
+Algoritma Menghitung Resultan Gaya (Newton)
+
+1. Mulai
+2. Deklarasi hasil, m = 600, a = 2
+3. Hitung m dikali a
+4. Hasil dari m dikali a dimasukan ke dalam hasil
+5. Cetak hasil
+6. Selesai
