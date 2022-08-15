@@ -1,0 +1,22 @@
+Pseudocode Keliling Lingkaran
+1. Mulai
+2. Deklarasikan variabel Pi dengan nilai = 3.14
+3. Buat inputan berupa angka dan masukan ke dalam variabel r.
+4. Membaca r.
+5. Buat variabel keliling
+6. Hitung keliling lingkaran dengan rumus 2 * pi * r
+7. Simpan keliling ke dalam variabel hasil
+8. Tampilkan variabel keliling
+9. Selesai
+
+1. Mulai
+2. Deklarasi :
+	const pi = 3.14
+3. Deskripsi :
+	let r = await input("Masukan Jari-Jari : ");
+	read(r)
+	function keliling(r) => {
+	keliling <- 2 * pi * r
+	return write(keliling)
+	}
+	write(keliling)
