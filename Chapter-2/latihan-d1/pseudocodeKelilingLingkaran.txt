@@ -1,5 +1,5 @@
-Input dan simpan "jari-jari" di variable (r)
-Simpan angka 3.14 di variable (phi)
-Hitung "jari-jari" dikali phi dikali 2
-Simpan hasil perhitungan di variable(hasil)
-Tampilkan hasil perhitungan(hasil)
+BACA dan SIMPAN "jari-jari" di variable (r)
+SIMPAN angka 3.14 di variable (PHI)
+HITUNG "jari-jari" dikali PHI dikali 2
+SIMPAN hasil perhitungan di variable(HASIL)
+TAMPILAKN hasil perhitungan(HASIL)
