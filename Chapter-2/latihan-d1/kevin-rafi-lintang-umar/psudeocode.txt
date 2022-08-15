@@ -1,0 +1,3 @@
+procedure result (input1)
+    2*r*3.14
+output result(5)
