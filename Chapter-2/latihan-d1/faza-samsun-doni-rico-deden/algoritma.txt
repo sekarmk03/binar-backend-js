@@ -1,0 +1,5 @@
+1. Tentukan jari-jari dari lingkaran yang akan dihitung kelilingnya
+2. Masukkan nilai jari-jari tersebut kedalam rumus keliling lingkaran yaitu 2*ph
+i*r (phi akan bernilai 3.14 jika r bukan kelipatan 7 atau phi akan bernilai 22/7 jika phi kelipatan 7)
+3. Hitung keliling dari lingkaran tersebut
+4. Tampilkan hasil
