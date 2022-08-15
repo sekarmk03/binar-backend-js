@@ -1,0 +1,7 @@
+algoritma
+
+1. Mulai
+2. Deklarasi variabel m = massa benda (kg) , a = percepatan benda (m/s2)
+3. Proses, result = m * a
+4. Tampilkan result
+5. Selesai
