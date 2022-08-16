@@ -1,8 +1,5 @@
-const resultanGaya = (m, a) => {
-  const hasil = m*a;
-  return hasil;
-};
+let masaBenda = 600;
+let percepatanBenda = 2;
+let hasil = masaBenda * percepatanBenda;
 
-const hasil = resultanGaya(600, 2)
-
-console.log(hasil)
+console.log(hasil);
