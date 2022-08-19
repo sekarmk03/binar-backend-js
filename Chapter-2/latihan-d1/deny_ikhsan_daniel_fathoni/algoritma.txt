@@ -1,0 +1,6 @@
+
+1. user menjalankan program
+2. user memasukkan nilai jari-jari
+3. nilai yang dimasukkan akan dihitung oleh sistem dengan rumus 2 * 3.14 * x (nilai yang diinput user)
+4. program menampilkan hasil dari perhitungan
+5. selesai

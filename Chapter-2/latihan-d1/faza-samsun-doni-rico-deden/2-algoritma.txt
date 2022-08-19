@@ -1,0 +1,4 @@
+1. massa benda 600kg dengan percepatan 2m/s^2
+2. gunakan rumus resultan gaya dengan rumus F = m*a (m adalah massa dan a adalah percepatan)
+3. hitung resutan gaya
+4. tampilkan hasil

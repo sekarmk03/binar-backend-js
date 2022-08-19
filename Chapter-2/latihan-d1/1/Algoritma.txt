@@ -1,0 +1,7 @@
+algoritma
+
+1. Start
+2. Masukan r (jari-jari)
+3. Proses, result = 2 * r * 3.14
+4. Tampilkan result
+5. Selesai

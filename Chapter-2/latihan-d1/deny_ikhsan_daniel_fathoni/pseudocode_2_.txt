@@ -1,0 +1,5 @@
+SIMPAN "massa" dengan nilai 600 di variable(massa)
+SIMPAN "percepatan" dengan nilai 2 di variable(percepatan)
+HITUNG massa dikali percepatan
+SIMPAN hasil perhitungan di variable(resultan)
+TAMPILKAN hasil perhitungan(resultan) 

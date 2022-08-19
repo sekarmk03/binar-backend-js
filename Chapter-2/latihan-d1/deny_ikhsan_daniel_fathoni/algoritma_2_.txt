@@ -1,0 +1,9 @@
+ALGORITMA 
+
+1. user melakukan inisiasi variabel  massa dan  percepatan yaitu massa = 600 , percepatan = 2
+2. user menjalankan program 
+3. sistem melakukan perhitungan resultan gaya dengan rumus massa * percepatan
+4. sistem menampilkan hasil
+5. selesai
+
+note: user tidak melakukan input karena nilai sudah ditentukan
