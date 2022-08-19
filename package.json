@@ -1,11 +1,16 @@
 {
+<<<<<<< HEAD
   "name": "day-to-day",
+=======
+  "name": "tugaskelompok",
+>>>>>>> 52f75a1de8be450fa8949b51b3ae0a77db025249
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day.git"
@@ -16,4 +21,11 @@
     "url": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day/issues"
   },
   "homepage": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day#readme"
+=======
+  "author": "sekar",
+  "license": "ISC",
+  "dependencies": {
+    "add-gitignore": "^1.1.1"
+  }
+>>>>>>> 52f75a1de8be450fa8949b51b3ae0a77db025249
 }

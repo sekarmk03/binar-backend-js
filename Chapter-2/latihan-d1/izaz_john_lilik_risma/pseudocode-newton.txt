@@ -1,0 +1,21 @@
+Pseudocode Menghitung Resultan Gaya (Newton)
+
+1. Mulai
+2. Deklarasikan variabel hasil, m dan a
+3. Simpan nilai 600 ke dalam variabel m
+4. Simpan nilai 2 ke dalam variabel a
+5. Hitung m dikali a
+6. Simpan ke dalam variabel hasil
+7. Tampilkan hasil
+8. Selesai
+
+1. Mulai
+2. Deklarasi
+	let hasil;
+	let m = 600;
+	let a = 2;
+3. Deskripsi
+	read(m,a);
+	hasil <- m * a;
+	write(hasil);
+4. Selesai

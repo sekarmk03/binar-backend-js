@@ -1,0 +1,6 @@
+1. Mulai
+2. Inisialisasi phi = 3,14, jari-jari, luas
+3. Menerima input jari-jari
+4. luas = 2*phi*r
+5. Output luas
+6. Selesai
