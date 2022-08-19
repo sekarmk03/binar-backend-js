@@ -1,0 +1,6 @@
+SIMPAN "pi" dengan nilai 3.14 di variable(pi)
+BACA dan SIMPAN "jari-jari" di variable(r)
+HITUNG 2 dikali "pi" dikali "jari-jari"
+SIMPAN hasil perhitungan di variable(keliling)
+TAMPILKAN hasil perhitungan(keliling) 
+
