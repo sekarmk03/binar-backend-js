@@ -1,14 +1,19 @@
 {
-  "name": "tugaskelompok",
+  "name": "latihan1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "sekar.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day.git"
+  },
   "author": "sekar",
   "license": "ISC",
-  "dependencies": {
-    "add-gitignore": "^1.1.1"
-  }
+  "bugs": {
+    "url": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day/issues"
+  },
+  "homepage": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day#readme"
 }
