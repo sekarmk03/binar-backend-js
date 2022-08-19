@@ -1,0 +1,6 @@
+1. Mulai
+2. Siapkan variabel untuk menampung resultan gaya, massa, percepatan beda
+3. masukkan massa, percepatan benda
+4. definisikan rumus resultan gaya kedalam variable resultan gaya (massa * percepatan)
+5. tampilkan hasil perhitungan resultan gaya
+6. Selesai
