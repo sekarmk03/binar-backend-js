@@ -1,0 +1,6 @@
+1. Mulai
+2. Siapkan variabel untuk menampung jari-jari, keliling, dan definisikan pi = 3.14
+3. Masukkan nilai jari-jari
+4. Definisikan rumus keliling lingkaran ke dalam variabel keliling (2 * pi * jari-jari)
+5. Tampilkan hasil perhitungan keliling lingkaran
+6. Selesai
