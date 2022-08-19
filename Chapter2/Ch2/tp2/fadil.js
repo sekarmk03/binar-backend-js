@@ -43,8 +43,8 @@ console.log(segitiga3(5));
 
 function segitiga4(panjang) {
     let hasil = '';
-    for (let i = panjang; i > 0; i--) {
-        for (let j = 0; j <= panjang; j++) {
+    for (let i = panjang; i >= 0; i--) {
+        for (let j = 0; j < panjang; j++) {
             if ( j < i ) {
                 hasil += " ";
             } else {
