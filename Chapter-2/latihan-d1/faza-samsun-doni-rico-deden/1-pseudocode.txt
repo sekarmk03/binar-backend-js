@@ -1,0 +1,5 @@
+BACA dan SIMPAN "jari-jari" di variable (r)
+SIMPAN angka 3.14 di variable (PHI)
+HITUNG "jari-jari" dikali PHI dikali 2
+SIMPAN hasil perhitungan di variable(HASIL)
+TAMPILAKN hasil perhitungan(HASIL)
