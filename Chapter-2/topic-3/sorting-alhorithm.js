@@ -1,6 +1,4 @@
-/*
-  bubbele sort
-*/
+/* bubbele sort */
 function bubbleSort(arr) {
     for (let i = arr.length - 1; i >= 0; i--) {
         for (let j = 1; j <= i; j++) {
@@ -20,17 +18,13 @@ function bubbleSort(arr) {
 
     }
 }
-
 bubbleSort([8, 6, 7, 20, 1]);
 
 
 
 
 
-/*
-  merge sort
-*/
-
+/* merge sort */
 function mergeShort(arr) {
     var len = arr.length;
     if (len < 2) return arr;
@@ -41,7 +35,6 @@ function mergeShort(arr) {
 
     return merge(mergeShort(left), mergeShort(right));
 }
-
 function merge(left, right) {
     var result = [],
         lLen = left.length,
@@ -59,12 +52,13 @@ function merge(left, right) {
 
     return result.concat(left.slice(l).concat(right.slice(r)));
 }
-
 console.log(mergeShort([7, 5, 2, 4, 3, 9]));
 
 
 
 
+
+/* quick sort */
 function quickSort(Arr) {
     if (Arr.length <= 1) {
         return Arr;
@@ -102,6 +96,27 @@ function quickSort(Arr) {
     return [...quickSort(leftArr), ...quickSort(rightArr)];
 
 }
-
 quickSort([9, 4, 2, 7, 10, 1, 5]);
 
+
+
+
+
+/* deret fibonacci */
+function fibbonacci(number) {
+    const arr = [];
+
+    for (let i = 0; i <= number - 1; i++) {
+
+        if (i > 1) {
+            arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+        } else {
+            arr.push(1);
+        }
+
+    }
+
+    return arr;
+}
+
+console.log(fibbonacci(10));
