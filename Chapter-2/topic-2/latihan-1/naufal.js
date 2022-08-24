@@ -13,102 +13,111 @@ Output yang diinginkan :
 */
 
 function segitiga1(panjang) {
-    output = ''
+    let hasil = '';
     for (let i = 0; i < panjang; i++) {
         for (let j = 0; j <= i; j++) {
-            output += '* '
+            hasil += '* ';
         }
-        output += '\n'
+        hasil += '\n';
     }
-    return output
+    return hasil;
 }
 
 console.log(segitiga1(5));
 
 
 /*
-
+ 
 Output yang diinginkan :
-
-
+ 
+ 
 * * * * *
 * * * *
 * * *
 * *
 *
-
+ 
  
 */
 
 function segitiga2(panjang) {
-    let output = ''
+    let hasil = '';
     for (let i = 0; i < panjang; i++) {
         for (let j = panjang; j > i; j--) {
-            output += '* '
+            hasil += '* ';
         }
-        output += '\n'
+        hasil += '\n';
     }
-    return output
+    return hasil;
+
 }
+
+
 
 console.log(segitiga2(5));
 
 
 /*
-
+ 
 Output yang diinginkan :
-
-
+ 
+ 
 * * * * *
   * * * *
     * * *
       * *
         *
-
+ 
  
 */
 
 function segitiga3(panjang) {
-    let output = '';
-    for (let i = 0; i <= panjang; i++) {
-        for (let j = panjang; j >= i; j--) {
-            output += '*'
+    let hasil = '';
+    for (let i = panjang; i > 0; i--) {
+        for (let j = panjang; j > 0; j--) {
+            if (j > i) {
+                hasil += ' ';
+            } else {
+                hasil += '*';
+            }
+
         }
-        output += '\n'
+        hasil += '\n';
     }
-    return output
+    return hasil;
+
 }
 
 console.log(segitiga3(5));
 
 
 /*
-
+ 
 Output yang diinginkan :
-
-
+ 
+ 
         *
       * *
     * * *
   * * * *
 * * * * *
-
+ 
  
 */
 
 function segitiga4(panjang) {
-    let output = '';
+    let hasil = '';
     for (let i = panjang; i > 0; i--) {
         for (let j = 1; j <= panjang; j++) {
             if (j >= i) {
-                output += '* ';
+                hasil += '*';
             } else {
-                output += ' '
+                hasil += ' ';
             }
         }
-        output += '\n';
+        hasil += '\n';
     }
-    return output;
+    return hasil;
 }
 
-//console.log(segitiga4(5));
+console.log(segitiga4(5));
