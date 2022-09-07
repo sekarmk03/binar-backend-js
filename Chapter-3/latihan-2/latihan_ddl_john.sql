@@ -23,20 +23,20 @@ CREATE TABLE channels (
 CREATE TABLE subscribers (
   id BIGSERIAL PRIMARY KEY, 
   channel_id INT NOT NULL, 
-  id_user INT 
+  id_user INT NOT NULL
 );
 
 CREATE TABLE videos (
   id bigserial PRIMARY KEY, 
   title varchar(50) NOT NULL,
   description TEXT,
-  channel_id INT
+  channel_id INT NOT NULL
 );
 
 CREATE TABLE comments (
   id BIGSERIAL PRIMARY KEY, 
-  video_id INT,
-  id_user INT,
+  video_id INT NOT NULL,
+  id_user INT NOT NULL,
   comments TEXT
 );
 
