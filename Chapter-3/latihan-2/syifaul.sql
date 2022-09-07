@@ -1,46 +1,46 @@
 CREATE TABLE Users (
-  id int,
-  name char(50),
-  email char(50),
-  password password,
+  id integer,
+  name varchar(50),
+  email varchar(50),
+  password varchar(50),
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Channels (
-  id int,
-  user_id int,
-  name char(50),
+  id integer,
+  user_id integer,
+  name varchar(50),
   desciption text,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Subscribers (
-  id int,
-  channel_id int,
-  user_id int,
+  id integer,
+  channel_id integer,
+  user_id integer,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Videos (
-  id int,
-  title char(50),
+  id integer,
+  title varchar(50),
   descriiption text,
-  channel_id int,
+  channel_id integer,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Comments (
-  id int,
-  video_id int,
-  user_id int,
+  id integer,
+  video_id integer,
+  user_id integer,
   comment text,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Liks (
-  id int,
-  video_id int,
-  user_id int,
+  id integer,
+  video_id integer,
+  user_id integer,
   PRIMARY KEY (id)
 );
 
