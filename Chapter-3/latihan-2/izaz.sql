@@ -9,7 +9,7 @@ CREATE TABLE channels (
     id INTEGER PRIMARY KEY,
     user_id INTEGER NOT NULL,
     name VARCHAR(255) NOT NULL,
-    description VARCHAR(255) NOT NULL DEFAULT '-'
+    description TEXT NOT NULL DEFAULT '-'
 );
 
 CREATE TABLE videos (
