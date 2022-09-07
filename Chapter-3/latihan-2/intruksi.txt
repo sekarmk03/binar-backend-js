@@ -1,0 +1,6 @@
+users (id, name, email, password);
+channels (id, user_id, name, description);
+subscribers (id, channel_id, user_id);
+videos (id, title, description, channel_id);
+comments (id, video_id, user_id, comment);
+likes (id, video_id, user_id);
