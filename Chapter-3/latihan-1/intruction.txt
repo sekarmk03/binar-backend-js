@@ -1,0 +1,8 @@
+table :
+- products (id, name, desc, stock)
+- customers (id, name, address)
+- transaction (id, product_id, customer_id, qty)
+
+procedure :
+- transaction(customer_id, product_id, qty)
+- restock(product_id, qty)

@@ -1,0 +1,5 @@
+READ and SAVE "massa"
+READ adn SAVE "acceleration"
+COMPUTE "massa" multiplication "acceleration"
+SAVE previous computation result
+SHOW the computation result
