@@ -1,0 +1,23 @@
+insert into products(name, des, stock) values('mouse', 'ini mouse wireless merk logotek', 20);
+insert into products(name, des, stock) values('earphone', 'ini earphone bluetooth tanpa merk', 30);
+
+select * from products;
+
+insert into customers(name, address) values('sekar', 'bandung');
+insert into customers(name, address) values('azar', 'pandeglang');
+
+select * from customers;
+
+call transactions(1, 1, 2);
+call transactions(2, 1, 5);
+call transactions(1, 2, 3);
+call transactions(2, 2, 3);
+
+select * from transaction;
+
+call restock(1, 5);
+call restock(2, 5);
+
+select * from products;
+
+pg_dump -U postgres db_latihan1ch3 > db_latihan1ch3.sql
