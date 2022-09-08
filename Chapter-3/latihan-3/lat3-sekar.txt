@@ -1,0 +1,4 @@
+JAWABAN LATIHAN 3
+-----------------
+1). SELECT v.id AS id_video, v.title AS judul_video, v.description AS deskripsi_video, c.name AS nama_channel FROM videos v JOIN channels c ON c.id = v.channel_id;
+2). 
