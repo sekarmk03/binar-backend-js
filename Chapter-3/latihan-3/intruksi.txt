@@ -36,3 +36,24 @@ Output :
           2 | detective aldo         | aldo ditario
           3 | tim 2 one              | chandra liow
 (3 rows)
+
+
+
+
+
+3. Tampilkan daftar video dan urutkan berdasarkan jumlah likes paling banyak
+
+Output :
+
+ id_video |          judul_video           | jumlah_like
+----------+--------------------------------+-------------
+        5 | ada apa dengan binomskuy       |           6
+        8 | Review infinity stone 1:1      |           5
+        2 | Ukraina VS Rusia               |           4
+        4 | Apakah alien ada?              |           3
+        3 | Bintang emon                   |           3
+        7 | Reaksi Editor Indonesia Part 1 |           3
+        6 | benarkah bumi itu datar?       |           3
+        1 | Somasi UUS                     |           2
+        9 | video cinematic                |           1
+(9 rows)
