@@ -1,5 +1,26 @@
 JAWABAN LATIHAN 3
 -----------------
-1). SELECT v.id AS id_video, v.title AS judul_video, v.description AS deskripsi_video, c.name AS nama_channel FROM videos v JOIN channels c ON c.id = v.channel_id;
-2). SELECT c.id AS id_channel, c.name AS nama_channel, u.name AS pemilik_channel FROM channels c JOIN users u ON c.user_id = u.id;
-3). SELECT l.video_id AS id_video, v.title AS judul_video, COUNT(l.video_id) AS jumlah_like FROM likes l JOIN videos v ON v.id = l.video_id GROUP BY l.video_id, v.title ORDER BY jumlah_like DESC;
+1). SELECT
+    v.id AS id_video,
+    v.title AS judul_video,
+    v.description AS deskripsi_video,
+    c.name AS nama_channel
+    FROM videos v
+    JOIN channels c
+    ON c.id = v.channel_id;
+2). SELECT
+    c.id AS id_channel,
+    c.name AS nama_channel,
+    u.name AS pemilik_channel
+    FROM channels c
+    JOIN users u
+    ON c.user_id = u.id;
+3). SELECT
+    l.video_id AS id_video,
+    v.title AS judul_video,
+    COUNT(l.video_id) AS jumlah_like
+    FROM likes l
+    JOIN videos v
+    ON v.id = l.video_id
+    GROUP BY l.video_id, v.title
+    ORDER BY jumlah_like DESC;
