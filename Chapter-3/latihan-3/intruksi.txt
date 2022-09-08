@@ -18,3 +18,21 @@ Output :
         8 | Review infinity stone 1:1      | review infinity stone glove marvel    | tim 2 one
         9 | video cinematic                | cara membuat video cinematic          | tim 2 one
 (9 rows)
+
+
+
+
+
+2. Tampilkan daftar channel dengan detail :
+   - id_channel
+   - nama_channel
+   - pemilik_channel
+
+Output :
+
+ id_channel |      nama_channel      | pemilik_channel
+------------+------------------------+-----------------
+          1 | close the door podcast | deddy corbuzier
+          2 | detective aldo         | aldo ditario
+          3 | tim 2 one              | chandra liow
+(3 rows)
