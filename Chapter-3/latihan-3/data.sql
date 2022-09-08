@@ -1,5 +1,5 @@
---
 -- PostgreSQL database dump
+--
 --
 
 -- Dumped from database version 14.2
@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: channel_subscribers; Type: TABLE; Schema: public; Owner: tatangdev
+-- Name: channel_subscribers; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.channel_subscribers (
@@ -31,10 +31,10 @@ CREATE TABLE public.channel_subscribers (
 );
 
 
-ALTER TABLE public.channel_subscribers OWNER TO tatangdev;
+ALTER TABLE public.channel_subscribers OWNER TO postgres;
 
 --
--- Name: channel_subscribers_id_seq; Type: SEQUENCE; Schema: public; Owner: tatangdev
+-- Name: channel_subscribers_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.channel_subscribers_id_seq
@@ -45,17 +45,17 @@ CREATE SEQUENCE public.channel_subscribers_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.channel_subscribers_id_seq OWNER TO tatangdev;
+ALTER TABLE public.channel_subscribers_id_seq OWNER TO postgres;
 
 --
--- Name: channel_subscribers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tatangdev
+-- Name: channel_subscribers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.channel_subscribers_id_seq OWNED BY public.channel_subscribers.id;
 
 
 --
--- Name: channels; Type: TABLE; Schema: public; Owner: tatangdev
+-- Name: channels; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.channels (
@@ -66,10 +66,10 @@ CREATE TABLE public.channels (
 );
 
 
-ALTER TABLE public.channels OWNER TO tatangdev;
+ALTER TABLE public.channels OWNER TO postgres;
 
 --
--- Name: channels_id_seq; Type: SEQUENCE; Schema: public; Owner: tatangdev
+-- Name: channels_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.channels_id_seq
@@ -80,17 +80,17 @@ CREATE SEQUENCE public.channels_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.channels_id_seq OWNER TO tatangdev;
+ALTER TABLE public.channels_id_seq OWNER TO postgres;
 
 --
--- Name: channels_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tatangdev
+-- Name: channels_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.channels_id_seq OWNED BY public.channels.id;
 
 
 --
--- Name: comments; Type: TABLE; Schema: public; Owner: tatangdev
+-- Name: comments; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.comments (
@@ -101,10 +101,10 @@ CREATE TABLE public.comments (
 );
 
 
-ALTER TABLE public.comments OWNER TO tatangdev;
+ALTER TABLE public.comments OWNER TO postgres;
 
 --
--- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: tatangdev
+-- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.comments_id_seq
@@ -115,17 +115,17 @@ CREATE SEQUENCE public.comments_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.comments_id_seq OWNER TO tatangdev;
+ALTER TABLE public.comments_id_seq OWNER TO postgres;
 
 --
--- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tatangdev
+-- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.comments_id_seq OWNED BY public.comments.id;
 
 
 --
--- Name: likes; Type: TABLE; Schema: public; Owner: tatangdev
+-- Name: likes; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.likes (
@@ -135,10 +135,10 @@ CREATE TABLE public.likes (
 );
 
 
-ALTER TABLE public.likes OWNER TO tatangdev;
+ALTER TABLE public.likes OWNER TO postgres;
 
 --
--- Name: likes_id_seq; Type: SEQUENCE; Schema: public; Owner: tatangdev
+-- Name: likes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.likes_id_seq
@@ -149,17 +149,17 @@ CREATE SEQUENCE public.likes_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.likes_id_seq OWNER TO tatangdev;
+ALTER TABLE public.likes_id_seq OWNER TO postgres;
 
 --
--- Name: likes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tatangdev
+-- Name: likes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.likes_id_seq OWNED BY public.likes.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: tatangdev
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.users (
@@ -170,10 +170,10 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO tatangdev;
+ALTER TABLE public.users OWNER TO postgres;
 
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: tatangdev
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.users_id_seq
@@ -184,17 +184,17 @@ CREATE SEQUENCE public.users_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.users_id_seq OWNER TO tatangdev;
+ALTER TABLE public.users_id_seq OWNER TO postgres;
 
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tatangdev
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: videos; Type: TABLE; Schema: public; Owner: tatangdev
+-- Name: videos; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.videos (
@@ -205,10 +205,10 @@ CREATE TABLE public.videos (
 );
 
 
-ALTER TABLE public.videos OWNER TO tatangdev;
+ALTER TABLE public.videos OWNER TO postgres;
 
 --
--- Name: videos_id_seq; Type: SEQUENCE; Schema: public; Owner: tatangdev
+-- Name: videos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.videos_id_seq
@@ -219,59 +219,59 @@ CREATE SEQUENCE public.videos_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.videos_id_seq OWNER TO tatangdev;
+ALTER TABLE public.videos_id_seq OWNER TO postgres;
 
 --
--- Name: videos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: tatangdev
+-- Name: videos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.videos_id_seq OWNED BY public.videos.id;
 
 
 --
--- Name: channel_subscribers id; Type: DEFAULT; Schema: public; Owner: tatangdev
+-- Name: channel_subscribers id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.channel_subscribers ALTER COLUMN id SET DEFAULT nextval('public.channel_subscribers_id_seq'::regclass);
 
 
 --
--- Name: channels id; Type: DEFAULT; Schema: public; Owner: tatangdev
+-- Name: channels id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.channels ALTER COLUMN id SET DEFAULT nextval('public.channels_id_seq'::regclass);
 
 
 --
--- Name: comments id; Type: DEFAULT; Schema: public; Owner: tatangdev
+-- Name: comments id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comments ALTER COLUMN id SET DEFAULT nextval('public.comments_id_seq'::regclass);
 
 
 --
--- Name: likes id; Type: DEFAULT; Schema: public; Owner: tatangdev
+-- Name: likes id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.likes ALTER COLUMN id SET DEFAULT nextval('public.likes_id_seq'::regclass);
 
 
 --
--- Name: users id; Type: DEFAULT; Schema: public; Owner: tatangdev
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
--- Name: videos id; Type: DEFAULT; Schema: public; Owner: tatangdev
+-- Name: videos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.videos ALTER COLUMN id SET DEFAULT nextval('public.videos_id_seq'::regclass);
 
 
 --
--- Data for Name: channel_subscribers; Type: TABLE DATA; Schema: public; Owner: tatangdev
+-- Data for Name: channel_subscribers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.channel_subscribers (id, channel_id, user_id) FROM stdin;
@@ -286,7 +286,7 @@ COPY public.channel_subscribers (id, channel_id, user_id) FROM stdin;
 
 
 --
--- Data for Name: channels; Type: TABLE DATA; Schema: public; Owner: tatangdev
+-- Data for Name: channels; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.channels (id, user_id, name, description) FROM stdin;
@@ -297,7 +297,7 @@ COPY public.channels (id, user_id, name, description) FROM stdin;
 
 
 --
--- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: tatangdev
+-- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.comments (id, video_id, user_id, comment) FROM stdin;
@@ -335,7 +335,7 @@ COPY public.comments (id, video_id, user_id, comment) FROM stdin;
 
 
 --
--- Data for Name: likes; Type: TABLE DATA; Schema: public; Owner: tatangdev
+-- Data for Name: likes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.likes (id, video_id, user_id) FROM stdin;
@@ -373,7 +373,7 @@ COPY public.likes (id, video_id, user_id) FROM stdin;
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: tatangdev
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.users (id, name, email, password) FROM stdin;
@@ -387,7 +387,7 @@ COPY public.users (id, name, email, password) FROM stdin;
 
 
 --
--- Data for Name: videos; Type: TABLE DATA; Schema: public; Owner: tatangdev
+-- Data for Name: videos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.videos (id, title, description, channel_id) FROM stdin;
@@ -404,49 +404,49 @@ COPY public.videos (id, title, description, channel_id) FROM stdin;
 
 
 --
--- Name: channel_subscribers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tatangdev
+-- Name: channel_subscribers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.channel_subscribers_id_seq', 7, true);
 
 
 --
--- Name: channels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tatangdev
+-- Name: channels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.channels_id_seq', 3, true);
 
 
 --
--- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tatangdev
+-- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.comments_id_seq', 30, true);
 
 
 --
--- Name: likes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tatangdev
+-- Name: likes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.likes_id_seq', 66, true);
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tatangdev
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.users_id_seq', 6, true);
 
 
 --
--- Name: videos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: tatangdev
+-- Name: videos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.videos_id_seq', 9, true);
 
 
 --
--- Name: channel_subscribers channel_subscribers_pkey; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: channel_subscribers channel_subscribers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.channel_subscribers
@@ -454,7 +454,7 @@ ALTER TABLE ONLY public.channel_subscribers
 
 
 --
--- Name: channels channels_pkey; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: channels channels_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.channels
@@ -462,7 +462,7 @@ ALTER TABLE ONLY public.channels
 
 
 --
--- Name: channels channels_user_id_unique; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: channels channels_user_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.channels
@@ -470,7 +470,7 @@ ALTER TABLE ONLY public.channels
 
 
 --
--- Name: comments comments_pkey; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: comments comments_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comments
@@ -478,7 +478,7 @@ ALTER TABLE ONLY public.comments
 
 
 --
--- Name: likes likes_pkey; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: likes likes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.likes
@@ -486,7 +486,7 @@ ALTER TABLE ONLY public.likes
 
 
 --
--- Name: users users_email_unique; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: users users_email_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -494,7 +494,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -502,7 +502,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: videos videos_pkey; Type: CONSTRAINT; Schema: public; Owner: tatangdev
+-- Name: videos videos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.videos
