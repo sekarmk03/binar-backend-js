@@ -57,3 +57,26 @@ Output :
         1 | Somasi UUS                     |           2
         9 | video cinematic                |           1
 (9 rows)
+
+
+
+
+
+4. tampilkan daftar user dengan rincian :
+   - id_user
+   - nama_user
+   - video_yang_disukai
+   - video_yang_dikomentari
+   - channel_yang_diikuti
+
+Output :
+
+ id_user |    nama_user    | video_yang_disukai | video_yang_dikomentari | channel_yang_diikuti
+---------+-----------------+--------------------+------------------------+----------------------
+       1 | deddy corbuzier |                  5 |                      5 |
+       2 | aldo ditario    |                  5 |                      5 |
+       3 | chandra liow    |                  5 |                      5 |                    1
+       4 | tatang          |                  5 |                      5 |                    2
+       5 | irji            |                  5 |                      5 |                    2
+       6 | fais            |                  5 |                      5 |                    2
+
