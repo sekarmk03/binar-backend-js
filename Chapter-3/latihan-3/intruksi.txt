@@ -1,0 +1,20 @@
+1. Tampilkan daftar video yang ada di database dengan rincian :
+   - id_video
+   - judul_video
+   - deskripsi_video
+   - nama_channel
+
+Output :
+
+ id_video |          judul_video           |            deskripsi_video            |      nama_channel
+----------+--------------------------------+---------------------------------------+------------------------
+        1 | Somasi UUS                     | video uus minta maap                  | close the door podcast
+        2 | Ukraina VS Rusia               | penjelasan ahli tentang perang        | close the door podcast
+        3 | Bintang emon                   | ngalor ngidul bareng bintang emon     | close the door podcast
+        4 | Apakah alien ada?              | benarkah alien exist di alam semesta? | detective aldo
+        5 | ada apa dengan binomskuy       | penipuan terbesar                     | detective aldo
+        6 | benarkah bumi itu datar?       | emang iya?                            | detective aldo
+        7 | Reaksi Editor Indonesia Part 1 | reaksi blackpink                      | tim 2 one
+        8 | Review infinity stone 1:1      | review infinity stone glove marvel    | tim 2 one
+        9 | video cinematic                | cara membuat video cinematic          | tim 2 one
+(9 rows)
