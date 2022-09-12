@@ -79,3 +79,21 @@ Output :
        5 | irji            |                  5 |                      5 |                    2
        6 | fais            |                  5 |                      5 |                    2
 
+
+
+
+
+5. tampilkan daftar channel dengan rincian :
+   - id_channel
+   - nama_channel
+   - jumlah_pengikut
+   - jumlah_video
+   - Jumlah_like
+
+Output :
+
+ id_channel |      nama_channel      | jumlah_pengikut | jumlah_video | jumlah_like
+------------+------------------------+-----------------+--------------+-------------
+          1 | close the door podcast |               3 |            3 |           9
+          2 | detective aldo         |               2 |            3 |          12
+          3 | tim 2 one              |               2 |            3 |           9
