@@ -1,0 +1,17 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "sabrina",
+            "email": "sabrina@mail.com"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "teh botol",
+            "description": "teh botol tapi kotak",
+            "price": 3000
+        }
+    ]
+}
