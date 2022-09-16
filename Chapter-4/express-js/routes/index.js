@@ -28,11 +28,17 @@ router.get('/products/:productId', (req, res) => {
         brand = productId == 1 ? 'Apple' : productId == 2 ? 'Xiaomi' : 'Samsung';
     }
 
-    res.json({
+    // res.json({
+    //     id: +productId,
+    //     name: brand,
+    //     type: type ? type : null
+    // });
+
+    res.render('products/detail',{
         id: +productId,
         name: brand,
         type: type ? type : null
-    });
+    })
 });
 
 router.post('/products', (req, res) => {
