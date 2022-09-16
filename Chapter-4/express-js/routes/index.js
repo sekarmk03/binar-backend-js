@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-function logger(req, res, next) {
-    console.log('Time:', Date.now());
-    next();
-}
-
-router.use(logger);
+// function timeLogger(req, res, next) {
+//     console.log('Time:', Date.now());
+//     next();
+// }
+// router.use(timeLogger);
 
 router.get('/products', (req, res) => {
-    return res.json([
+    return res.status(200).json([
         { id: 1, name: 'Apple' },
         { id: 2, name: 'Xiaomi' },
         { id: 3, name: 'Samsung' }
@@ -33,18 +32,17 @@ router.get('/products/:productId', (req, res) => {
     //     name: brand,
     //     type: type ? type : null
     // });
-
-    res.render('products/detail',{
+    res.render('products/detail', {
         id: +productId,
         name: brand,
         type: type ? type : null
-    })
+    });
 });
 
 router.post('/products', (req, res) => {
     const { name } = req.body;
 
-    res.send(name);
+    res.json(name);
 });
 
 module.exports = router;
