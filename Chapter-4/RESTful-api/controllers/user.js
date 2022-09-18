@@ -54,5 +54,34 @@ module.exports = {
             message: 'success create data!',
             data: user
         });
+    },
+    update: (req, res) => {
+        const { name, email } = req.body;
+        const { userId } = req.params;
+
+        const foundIndex = data.users.findIndex((el) => el.id == userId);
+        if (foundIndex < 0) {
+            return res.status(404).json({
+                status: 'failed',
+                message: 'not found!',
+                data: null
+            });
+        }
+
+        if (name) {
+            data.users[foundIndex].name = name;
+        }
+
+        if (email) {
+            data.users[foundIndex].email = email;
+        }
+
+        fs.writeFileSync('./data.json', JSON.stringify(data));
+
+        return res.status(201).json({
+            status: 'success',
+            message: 'success create data!',
+            data: data.users[foundIndex]
+        });
     }
 };
