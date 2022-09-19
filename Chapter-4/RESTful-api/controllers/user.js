@@ -83,5 +83,27 @@ module.exports = {
             message: 'success create data!',
             data: data.users[foundIndex]
         });
+    },
+    delete: (req, res) => {
+        const { userId } = req.params;
+
+        const user = data.users.filter((el) => el.id == userId);
+        if (user.length == 0) {
+            return res.status(404).json({
+                status: 'failed',
+                message: 'not found!',
+                data: null
+            });
+        }
+
+        const keep = data.users.filter((el) => el.id != userId);
+        data.users = keep;
+        fs.writeFileSync('./data.json', JSON.stringify(data));
+
+        return res.status(201).json({
+            status: 'success',
+            message: 'success delete data!',
+            data: user
+        });
     }
 };
