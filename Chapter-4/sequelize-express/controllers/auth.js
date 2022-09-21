@@ -91,5 +91,9 @@ module.exports = {
         } catch (err) {
             next(err);
         }
+    },
+
+    changePassword: async (req, res, next) => {
+        const { old_password, new_password, confirm_new_password } = req.body;
     }
 };
