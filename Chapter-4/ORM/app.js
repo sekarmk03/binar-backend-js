@@ -37,5 +37,13 @@ async function main() {
         }
     );
     console.log(updated);
+
+    /* delete */
+    const deleted = await User.destroy({
+        where: {
+            id: 2
+        }
+    });
+    console.log(deleted);
 }
 main();
