@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const {
     JWT_SIGNATURE_KEY
-} = process.env
+} = process.env;
 
 module.exports = {
     register: async (req, res, next) => {
@@ -41,15 +41,6 @@ module.exports = {
 
     login: async (req, res, next) => {
         try {
-            /*
-            - get request body (email, password)
-            - cek database email ada atau tidak
-            - if gak ada => balikin 404 error
-            - if ada => cek hashPassword
-            - generate token (JWT => jsonwebtoken)
-            - return token
-            */
-
             const { email, password } = req.body;
 
             const user = await User.findOne({ where: { email: email } });
@@ -73,8 +64,8 @@ module.exports = {
                 id: user.id,
                 name: user.name,
                 email: user.email,
-            }
-            const token = jwt.sign(payload, JWT_SIGNATURE_KEY)
+            };
+            const token = jwt.sign(payload, JWT_SIGNATURE_KEY);
 
             return res.status(200).json({
                 status: false,
@@ -86,5 +77,23 @@ module.exports = {
         } catch (err) {
             next(err);
         }
+    },
+
+    whoami: (req, res, next) => {
+        const user = req.user;
+
+        try {
+            return res.status(200).json({
+                status: false,
+                message: 'success',
+                data: user
+            });
+        } catch (err) {
+            next(err);
+        }
+    },
+
+    changePassword: async (req, res, next) => {
+        const { old_password, new_password, confirm_new_password } = req.body;
     }
 };
