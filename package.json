@@ -1,8 +1,8 @@
 {
-  "name": "latihan1",
+  "name": "day-to-day",
   "version": "1.0.0",
   "description": "",
-  "main": "sekar.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
