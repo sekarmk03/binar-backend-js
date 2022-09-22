@@ -4,8 +4,9 @@ const fs = require('fs');
 module.exports = {
     index: (req, res) => {
         const { query } = req.query;
-
+      
         let users = data.users;
+       
 
         if (query) {
             users = data.users.filter((el) => el.name == query);
@@ -14,7 +15,8 @@ module.exports = {
         return res.status(200).json({
             status: 'success',
             message: 'success get all data!',
-            data: users
+            data: users,
+            
         });
     },
     show: (req, res) => {
@@ -67,7 +69,6 @@ module.exports = {
                 data: null
             });
         }
-
         if (name) {
             data.users[foundIndex].name = name;
         }
@@ -80,30 +81,32 @@ module.exports = {
 
         return res.status(201).json({
             status: 'success',
-            message: 'success create data!',
+            message: 'success get data!',
             data: data.users[foundIndex]
         });
     },
     delete: (req, res) => {
         const { userId } = req.params;
-
-        const user = data.users.filter((el) => el.id == userId);
-        if (user.length == 0) {
+        let users = data.users;
+        let panjangArr = users.length;
+        const foundIndex = data.users.findIndex((el) => el.id == userId);
+        if (foundIndex < 0 && foundIndex > panjangArr-1) {
             return res.status(404).json({
                 status: 'failed',
                 message: 'not found!',
                 data: null
             });
         }
-
-        const keep = data.users.filter((el) => el.id != userId);
-        data.users = keep;
+        else{
+            data.users.splice(foundIndex,1);
+        }
         fs.writeFileSync('./data.json', JSON.stringify(data));
 
-        return res.status(201).json({
+        return res.status(200).json({
             status: 'success',
             message: 'success delete data!',
-            data: user
+            data: data.users
+            
         });
     }
 };
