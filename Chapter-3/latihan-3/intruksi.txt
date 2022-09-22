@@ -22,7 +22,6 @@ Output :
 
 
 
-
 2. Tampilkan daftar channel dengan detail :
    - id_channel
    - nama_channel
