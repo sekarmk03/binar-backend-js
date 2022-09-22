@@ -1,47 +1,19 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
   "name": "day-to-day",
-=======
-  "name": "tugaskelompok",
->>>>>>> 52f75a1de8be450fa8949b51b3ae0a77db025249
-=======
-  "name": "latihan1",
->>>>>>> de1450565fc75827bf99368af775bc38f4eb7eb0
   "version": "1.0.0",
   "description": "",
-  "main": "sekar.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> de1450565fc75827bf99368af775bc38f4eb7eb0
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day.git"
   },
-<<<<<<< HEAD
   "author": "sekar",
   "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day/issues"
   },
   "homepage": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day#readme"
-=======
-  "author": "sekar",
-  "license": "ISC",
-  "dependencies": {
-    "add-gitignore": "^1.1.1"
-  }
->>>>>>> 52f75a1de8be450fa8949b51b3ae0a77db025249
-=======
-  "author": "sekar",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day/issues"
-  },
-  "homepage": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day#readme"
->>>>>>> de1450565fc75827bf99368af775bc38f4eb7eb0
 }
