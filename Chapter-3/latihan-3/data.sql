@@ -1,5 +1,5 @@
--- PostgreSQL database dump
 --
+-- PostgreSQL database dump
 --
 
 -- Dumped from database version 14.2
@@ -418,11 +418,7 @@ SELECT pg_catalog.setval('public.channels_id_seq', 3, true);
 
 
 --
--- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
 SELECT pg_catalog.setval('public.comments_id_seq', 30, true);
-
 
 --
 -- Name: likes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
