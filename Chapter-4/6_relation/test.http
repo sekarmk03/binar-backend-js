@@ -1,0 +1,38 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "name":"koi",
+    "email":"koi@mail.com",
+    "password":"password123"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"koi@mail.com",
+    "password":"password123"
+}
+
+###
+GET http://localhost:3000/auth/whoami
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
+
+{
+    "email":"koi@mail.com",
+    "password":"password123"
+}
+
+
+###
+POST http://localhost:3000/channel/create
+Content-Type: application/json
+
+{
+    "title":"sepulang sekolah",
+    "description":"learning by googling",
+    "user_id":1
+}
