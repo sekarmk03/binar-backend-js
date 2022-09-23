@@ -46,8 +46,8 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
 
 
-### show video
-GET http://localhost:3000/channels/2
+### show channel
+GET http://localhost:3000/channels/1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
 

@@ -11,7 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-    }
+      // belongsTo
+      Channel.belongsTo(models.User, {
+        foreignKey: 'user_id', as: 'user'
+      });
+
+      Channel.hasMany(models.Video, {
+        foreignKey: 'channel_id', as: 'videos'
+      })
+  }
   }
   Channel.init({
     name: DataTypes.STRING,

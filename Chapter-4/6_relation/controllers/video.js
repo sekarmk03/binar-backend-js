@@ -1,4 +1,4 @@
-const { Channel, Video } = require('../models');
+const { User, Channel, Video } = require('../models');
 
 module.exports = {
     create: async (req, res, next) => {
@@ -27,7 +27,7 @@ module.exports = {
             });
 
         } catch (err) {
-            next(err)
+            next(err);
         }
     },
     index: async (req, res, next) => {
@@ -40,14 +40,21 @@ module.exports = {
                 data: videos
             });
         } catch (err) {
-            next(err)
+            next(err);
         }
     },
     show: async (req, res, next) => {
         try {
             const { video_id } = req.params;
 
-            const video = await Video.findOne({ where: { id: video_id } });
+            const video = await Video.findOne({
+                where: { id: video_id },
+                include: [{
+                    model: Channel,
+                    as:'channel',
+                    attributes :['name', 'description']
+                }]
+            });
             if (!video) {
                 return res.status(404).json({
                     status: false,
@@ -63,7 +70,7 @@ module.exports = {
             });
 
         } catch (err) {
-            next(err)
+            next(err);
         }
     }
 };
