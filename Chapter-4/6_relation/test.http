@@ -1,3 +1,4 @@
+### register
 POST http://localhost:3000/auth/register
 Content-Type: application/json
 
@@ -7,7 +8,7 @@ Content-Type: application/json
     "password":"password123"
 }
 
-###
+### login
 POST http://localhost:3000/auth/login
 Content-Type: application/json
 
@@ -16,7 +17,7 @@ Content-Type: application/json
     "password":"password123"
 }
 
-###
+### validate token
 GET http://localhost:3000/auth/whoami
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
@@ -27,12 +28,50 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIs
 }
 
 
-###
-POST http://localhost:3000/channel/create
+### create channel
+POST http://localhost:3000/channels
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
 
 {
-    "title":"sepulang sekolah",
+    "name":"sepulang sekolah",
     "description":"learning by googling",
     "user_id":1
 }
+
+
+### list channel
+GET http://localhost:3000/channels
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
+
+
+### show video
+GET http://localhost:3000/channels/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
+
+
+
+### create video
+POST http://localhost:3000/videos
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
+
+{
+    "title":"jamet thailand",
+    "description":"jamet yang ada di thailand",
+    "channel_id":1
+}
+
+
+### list video
+GET http://localhost:3000/videos
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
+
+
+### show video
+GET http://localhost:3000/videos/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
