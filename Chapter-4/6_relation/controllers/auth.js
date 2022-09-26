@@ -30,6 +30,7 @@ module.exports = {
                 status: false,
                 message: 'success',
                 data: {
+                    id: user.id,
                     name: user.name,
                     email: user.email
                 }

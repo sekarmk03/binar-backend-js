@@ -18,8 +18,14 @@ module.exports = (sequelize, DataTypes) => {
 
       Channel.hasMany(models.Video, {
         foreignKey: 'channel_id', as: 'videos'
-      })
-  }
+      });
+
+      Channel.belongsToMany(models.User, {
+        through: models.Subscription,
+        foreignKey: 'channel_id',
+        as: 'subscribers'
+      });
+    }
   }
   Channel.init({
     name: DataTypes.STRING,

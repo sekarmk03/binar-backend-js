@@ -51,15 +51,22 @@ module.exports = {
                 where: { id: channel_id },
                 include: [
                     {
-                    model: Video,
-                    as:'videos',
-                    attributes :['title', 'description']
-                },
-                {
-                    model: User,
-                    as:'user',
-                    attributes :['name', 'email']
-                }]
+                        model: Video,
+                        as: 'videos',
+                        attributes: ['title', 'description']
+                    },
+                    {
+                        model: User,
+                        as: 'user',
+                        attributes: ['name', 'email']
+                    },
+                    {
+                        model: User,
+                        as: 'subscribers',
+                        attributes: ['name', 'email'],
+                        through: { attributes: [] }
+                    }
+                ]
             });
             if (!channel) {
                 return res.status(404).json({

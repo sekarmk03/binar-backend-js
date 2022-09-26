@@ -11,9 +11,12 @@ router.post('/auth/changepassword', mid.mustLogin, c.auth.changePassword);
 router.post('/channels', mid.mustLogin, c.channel.create);
 router.get('/channels', mid.mustLogin, c.channel.index);
 router.get('/channels/:channel_id', mid.mustLogin, c.channel.show);
+router.post('/channels/subscribe', mid.mustLogin, c.subscription.subscribe);
+router.delete('/channels/unsubscribe', mid.mustLogin, c.subscription.unsubscribe);
 
 router.post('/videos', mid.mustLogin, c.video.create);
 router.get('/videos', mid.mustLogin, c.video.index);
 router.get('/videos/:video_id', mid.mustLogin, c.video.show);
+
 
 module.exports = router;

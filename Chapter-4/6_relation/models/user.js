@@ -15,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Channel, {
         foreignKey: 'user_id', as: 'channel'
       });
+
+      User.belongsToMany(models.Channel, {
+        through: models.Subscription,
+        foreignKey: 'user_id',
+        as: 'subscriptions'
+      });
     }
   }
   User.init({

@@ -3,8 +3,8 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "name":"koi",
-    "email":"koi@mail.com",
+    "name":"valen",
+    "email":"valen@mail.com",
     "password":"password123"
 }
 
@@ -34,9 +34,9 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
 
 {
-    "name":"sepulang sekolah",
-    "description":"learning by googling",
-    "user_id":1
+    "name":"close the door",
+    "description":"somasi",
+    "user_id":3
 }
 
 
@@ -47,7 +47,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIs
 
 
 ### show channel
-GET http://localhost:3000/channels/1
+GET http://localhost:3000/channels/3
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
 
@@ -73,5 +73,20 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIs
 
 ### show video
 GET http://localhost:3000/videos/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
+
+### subscribe
+POST http://localhost:3000/channels/subscribe
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
+
+{
+    "user_id":1,
+    "channel_id":3
+}
+
+### unsubscriobe
+DELETE http://localhost:3000/channels/unsubscribe
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImtvaSIsImVtYWlsIjoia29pQG1haWwuY29tIiwiaWF0IjoxNjYzOTM2NDMwfQ.L2UB5aAcWhRes5M2vfe_KJv5xY-fJ-A0Bt2pRrQf42Q
