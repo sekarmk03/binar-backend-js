@@ -1,0 +1,26 @@
+POST http://localhost:3001/create
+Content-Type: application/json
+
+{
+    "name":"prabowo",
+    "email":"prabowo@test.com",
+    "password":"password123"
+}
+
+###
+POST http://localhost:3001/find
+Content-Type: application/json
+
+{
+    "email":"prabowo@test.com"
+}
+
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "name":"sandiaga",
+    "email":"sandiaga@test.com",
+    "password":"password123"
+}

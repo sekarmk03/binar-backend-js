@@ -1,5 +1,6 @@
 const { User } = require('../db/models');
 const bcrypt = require('bcrypt');
+const { response } = require('express');
 
 module.exports = {
     findOne: async (req, res, next) => {
@@ -15,14 +16,14 @@ module.exports = {
 
             const user = await User.findOne({ where });
             if (!user) {
-                return req.status(500).json({
+                return req.status(400).json({
                     status: false,
                     message: 'not found!',
                     data: null
                 });
             }
 
-            return res.status(201).json({
+            return res.status(200).json({
                 status: true,
                 message: 'success',
                 data: {
@@ -40,9 +41,9 @@ module.exports = {
         try {
             const { name, email, password } = req.body;
 
-            const exist = await User.findOne({ where: email });
+            const exist = await User.findOne({ where: { email } });
             if (exist) {
-                return req.status(500).json({
+                return res.status(400).json({
                     status: false,
                     message: 'email already used!',
                     data: null

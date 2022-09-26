@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const c = require('../controllers');
 
-router.post('/find', c.findOne);
-router.post('/create', c.create);
+router.post('/auth/register', c.register);
 
 module.exports = router;
