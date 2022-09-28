@@ -38,7 +38,7 @@ module.exports = {
   },
   findOne: async (req, res, next) => {
     try {
-      const { nama, mentor_id } = req.body;
+      const { nama } = req.body;
       const exist = await Kelas.findOne({ where: { nama } });
       if (exist) {
         return res.status(400).json({
