@@ -1,71 +1,51 @@
-const {user} = require('../models');
+const { kelas_user } = require('../db/models');
 const bcrypt = require('bcrypt');
-const {response} = require('express');
+const { response } = require('express');
 
 module.exports = {
     index: async (req, res, next) => {
-        const usersData = user.findAll({raw:true});
-        return res.status(200).json({
-            status: true,
-            message: 'get all data succeed',
-            data: usersData
-        });
-    },
-    findOne: async (req, res, next) => {
         try {
-            const where = {};
-            const {id, email} = req.params;
-            if(id) where.id = id;
-            if(email) where.email = email;
-
-            const userData = await user.findOne({where: where});
-            if(!userData) {
-                return res.status(500).json({
-                    status: false,
-                    message: 'data not found',
-                    data:null
-                });
-            }
-
-            return res.status(201).json({
+            const kelas_user_data = await kelas_user.findAll({raw: true});
+            return res.status(200).json({
                 status: true,
-                message: 'success',
-                data: {
-                    id: userData.id,
-                    email: userData.email,
-                    password: userData.password
-                }
-            });
+                message: 'Get all data successfully',
+                data: kelas_user_data
+            })
         } catch (err) {
             next(err);
         }
     },
     create: async (req, res, next) => {
         try {
-            const {name, email, password} = req.body;
+            const { name, email, password } = req.body;
 
-            const exist = await user.findOne({where: {email: email}});
-            if(exist) {
-                return res.status(500).json({
+            const exist = await kelas_user.findOne({ where: { email } });
+            if (exist) {
+                return res.status(400).json({
                     status: false,
-                    message: 'email already used',
-                    data:null
+                    message: 'email already used!',
+                    data: null
                 });
             }
 
-            const userData = await user.create({
+            const encrypted = await bcrypt.hash(password, 10);
+            const user = await kelas_user.create({
                 name,
                 email,
-                password: await bcrypt.hash(password, 10)
+                password: encrypted
             });
 
             return res.status(201).json({
                 status: true,
                 message: 'success',
-                data: userData
+                data: {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email
+                }
             });
         } catch (err) {
             next(err);
         }
     }
-}
+};
