@@ -3,6 +3,15 @@ const bcrypt = require('bcrypt');
 const { response } = require('express');
 
 module.exports = {
+
+    view: async (req, res, next) => {
+        const mentor = Mentor.findAll({raw:true});
+        return res.status(200).json({
+            status: true,
+            message: 'get data mentor succees',
+            data: mentor
+        });
+    },
     findOne: async (req, res, next) => {
         try {
             const where = {};
