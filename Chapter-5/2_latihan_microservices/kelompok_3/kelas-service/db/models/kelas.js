@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Kelas.init({
-    id: DataTypes.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     nama: DataTypes.STRING,
     deskripsi: DataTypes.STRING,
     mentor_id: DataTypes.INTEGER,
