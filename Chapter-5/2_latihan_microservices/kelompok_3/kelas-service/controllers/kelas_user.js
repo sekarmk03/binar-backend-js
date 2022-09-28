@@ -1,5 +1,4 @@
 const { kelas_user } = require('../db/models');
-const bcrypt = require('bcrypt');
 const { response } = require('express');
 
 module.exports = {
@@ -17,31 +16,20 @@ module.exports = {
     },
     create: async (req, res, next) => {
         try {
-            const { name, email, password } = req.body;
+            const { user_id, kelas_id } = req.body;
 
-            const exist = await kelas_user.findOne({ where: { email } });
-            if (exist) {
-                return res.status(400).json({
-                    status: false,
-                    message: 'email already used!',
-                    data: null
-                });
-            }
-
-            const encrypted = await bcrypt.hash(password, 10);
-            const user = await kelas_user.create({
-                name,
-                email,
-                password: encrypted
+            const data = await kelas_user.create({
+                user_id,
+                kelas_id
             });
 
             return res.status(201).json({
                 status: true,
                 message: 'success',
                 data: {
-                    id: user.id,
-                    name: user.name,
-                    email: user.email
+                    id: data.id,
+                    user_id: data.user_id,
+                    kelas_id: data.kelas_id
                 }
             });
         } catch (err) {
