@@ -2,7 +2,7 @@ const adapter = require("../adapter/api-adapter");
 const { User } = require("../db/models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { USER_SERVICE_HOST } = process.env;
+const { USER_SERVICE_HOST, JWT_SIGNATURE_KEY = "rahasia" } = process.env;
 
 const api = adapter(USER_SERVICE_HOST);
 
@@ -79,6 +79,82 @@ module.exports = {
         },
       });
     } catch (err) {
+      next(err);
+    }
+  },
+  registerKelas: async (req, res, next) => {
+    try {
+      const { nama, deskripsi, mentor_id, level } = req.body;
+      const { data } = await api.post("/register-kelas", {
+        nama,
+        deskripsi,
+        mentor_id,
+        level,
+      });
+
+      return res.status(201).json({
+        status: true,
+        message: "success",
+        data: data.data,
+      });
+    } catch (err) {
+      if (err.code == "ECONNREFUSED") {
+        err = new Error("service anvailable!");
+        return next(err);
+      }
+
+      if (err.response) {
+        const { status, data } = err.response;
+        res.status(status).json(data);
+      }
+
+      next(err);
+    }
+  },
+  findOneKelas: async (req, res, next) => {
+    try {
+      const { nama } = req.body;
+      const { data } = await api.post("/kelas-get", { nama });
+
+      return res.status(200).json({
+        status: true,
+        message: "success",
+        data: data.data,
+      });
+    } catch (err) {
+      if (err.code == "ECONNREFUSED") {
+        err = new Error("service anvailable!");
+        return next(err);
+      }
+
+      if (err.response) {
+        const { status, data } = err.response;
+        res.status(status).json(data);
+      }
+
+      next(err);
+    }
+  },
+  findAllKelas: async (req, res, next) => {
+    try {
+      const { data } = await api.post("/kelas-getAll");
+
+      return res.status(200).json({
+        status: true,
+        message: "success",
+        data: data.data,
+      });
+    } catch (err) {
+      if (err.code == "ECONNREFUSED") {
+        err = new Error("service anvailable!");
+        return next(err);
+      }
+
+      if (err.response) {
+        const { status, data } = err.response;
+        res.status(status).json(data);
+      }
+
       next(err);
     }
   },
