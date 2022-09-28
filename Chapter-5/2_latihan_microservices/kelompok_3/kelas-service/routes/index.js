@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const c = require('../controllers');
+const kelas_user = require('./kelas_user');
 
-router.post('/find', c.findOne);
-router.post('/create', c.create);
-router.get('/test', (req, res) => {
-    return res.status(400).json({
-        status: 'ok'
-    });
-});
+router.use('/kelas_user', kelas_user);
+
+// router.post('/find', c.);
+// router.post('/create', c.create);
+// router.get('/test', (req, res) => {
+//     return res.status(400).json({
+//         status: 'ok'
+//     });
+// });
 
 module.exports = router;
