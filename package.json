@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day/issues"
   },
-  "homepage": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day#readme"
+  "homepage": "https://gitlab.com/binar-academy-sib-3-bejs-1/day-to-day#readme",
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.1"
+  },
+  "dependencies": {
+    "sequelize": "^6.23.2"
+  }
 }
