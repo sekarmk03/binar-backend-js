@@ -9,7 +9,7 @@ KURSUS SERVICE
         - nama
         - deskripsi
         - mentor_id
-        - level (beginer/intermediate/master)
+        - level (beginer/intermediate/expert)
 
     tables kelas_user (create/read) :
         - id
