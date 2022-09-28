@@ -1,21 +1,21 @@
 {
   "development": {
-    "username": "tatangdev",
-    "password": "aandeani",
+    "username": "posrgres",
+    "password": "password",
     "database": "userservice",
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "tatangdev",
-    "password": "aandeani",
+    "username": "posrgres",
+    "password": "password",
     "database": "userservice",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "tatangdev",
-    "password": "aandeani",
+    "username": "posrgres",
+    "password": "password",
     "database": "userservice",
     "host": "localhost",
     "dialect": "postgres"
