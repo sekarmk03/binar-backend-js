@@ -71,5 +71,43 @@ module.exports = {
 
             next(err);
         }
-    }
+    },
+
+
+    test: async (req, res, next) => {
+        try {
+            // some process
+
+            // cara 1
+            // try {
+            //     const { data } = await api.get('/test');
+
+            //     return res.send("lakukan proses A");
+            // } catch (err) {
+            //     if (err.code == 'ECONNREFUSED') {
+            //         err = new Error('service anvailable!');
+            //         return next(err);
+            //     }
+
+            //     return res.send("lakukan proses B");
+            // }
+
+            // cara 2
+            api.get('/test')
+                .then(data => res.send("lakukan proses A"))
+                .catch(err => {
+                    if (err.code == 'ECONNREFUSED') {
+                        err = new Error('service anvailable!');
+                        return next(err);
+                    }
+
+                    res.send("lakukan proses B");
+                });
+
+
+            // // some process
+        } catch (err) {
+            next(err);
+        }
+    },
 };
