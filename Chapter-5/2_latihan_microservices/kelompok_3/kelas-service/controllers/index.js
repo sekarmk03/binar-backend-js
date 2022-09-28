@@ -1,7 +1,6 @@
 const { User } = require("../db/models");
 const bcrypt = require("bcrypt");
 const { response } = require("express");
-const kelas = require("./kelas");
 
 module.exports = {
   findOne: async (req, res, next) => {
@@ -72,5 +71,9 @@ module.exports = {
       next(err);
     }
   },
-  kelas,
 };
+const kelas = require("./kelas");
+const kelas_user = require("./kelas_user");
+const mentor = require("./mentor");
+
+module.exports = { kelas, kelas_user, mentor };
