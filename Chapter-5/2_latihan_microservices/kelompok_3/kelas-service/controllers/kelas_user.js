@@ -1,10 +1,10 @@
-const { kelas_user } = require("../db/models");
+const { Kelas_user } = require("../db/models");
 const { response } = require("express");
 
 module.exports = {
   index: async (req, res, next) => {
     try {
-      const kelas_user_data = await kelas_user.findAll({ raw: true });
+      const kelas_user_data = await Kelas_user.findAll({ raw: true });
       return res.status(200).json({
         status: true,
         message: "Get all data successfully",
@@ -16,9 +16,10 @@ module.exports = {
   },
   create: async (req, res, next) => {
     try {
-      const { user_id, kelas_id } = req.body;
+      const { id, user_id, kelas_id } = req.body;
 
-      const data = await kelas_user.create({
+      const data = await Kelas_user.create({
+        id,
         user_id,
         kelas_id,
       });

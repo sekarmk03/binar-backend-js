@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "postgres",
-    "password": "pass123",
-    "database": "userservice",
+    "password": "root",
+    "database": "latihan_microservice",
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "pass123",
-    "database": "userservice",
+    "password": "root",
+    "database": "latihan_microservice",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "pass123",
-    "database": "userservice",
+    "password": "root",
+    "database": "latihan_microservice",
     "host": "localhost",
     "dialect": "postgres"
   }

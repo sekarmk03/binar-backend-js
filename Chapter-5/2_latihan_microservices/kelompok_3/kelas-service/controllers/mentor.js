@@ -40,7 +40,7 @@ module.exports = {
 
   create: async (req, res, next) => {
     try {
-      const { nama, pekerjaan } = req.body;
+      const { id, nama, pekerjaan } = req.body;
 
       const mentor = await Mentor.create({
         id,

@@ -1,10 +1,10 @@
 const { Kelas } = require("../db/models");
-const kelas = require("../db/models/kelas");
+const { response } = require("express");
 
 module.exports = {
   register: async (req, res, next) => {
     try {
-      const { nama, deskripsi, mentor_id, level } = req.body;
+      const { id, nama, deskripsi, mentor_id, level } = req.body;
 
       const exist = await Kelas.findOne({ where: { nama } });
       if (exist) {
@@ -15,7 +15,8 @@ module.exports = {
         });
       }
 
-      const user = await kelas.create({
+      const user = await Kelas.create({
+        id,
         nama,
         deskripsi,
         mentor_id,
@@ -27,9 +28,9 @@ module.exports = {
         message: "success",
         data: {
           id: user.id,
-          name: user.name,
-          email: user.email,
-          pekerjaan: user.pekerjaan,
+          nama: user.nama,
+          deskripsi: user.deskripsi,
+          level: user.level,
         },
       });
     } catch (err) {
@@ -40,18 +41,11 @@ module.exports = {
     try {
       const { nama } = req.body;
       const exist = await Kelas.findOne({ where: { nama } });
-      if (exist) {
-        return res.status(400).json({
-          status: false,
-          message: "email already used!",
-          data: null,
-        });
-      }
 
       return res.status(200).json({
         status: false,
         message: "success",
-        data: user,
+        data: exist,
       });
     } catch (err) {
       next(err);
@@ -71,7 +65,7 @@ module.exports = {
       return res.status(200).json({
         status: false,
         message: "success",
-        data: user,
+        data: exist,
       });
     } catch (err) {
       next(err);
