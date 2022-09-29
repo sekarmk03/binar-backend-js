@@ -1,10 +1,10 @@
-const adapter = require("../adapter/api-adapter");
+const adapter = require("../adapter/apiadapter");
 const { User } = require("../db/models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { USER_SERVICE_HOST, JWT_SIGNATURE_KEY = "rahasia" } = process.env;
+const { KELAS_SERVICE_HOST, JWT_SIGNATURE_KEY = "rahasia" } = process.env;
 
-const api = adapter(USER_SERVICE_HOST);
+const api = adapter(KELAS_SERVICE_HOST);
 
 module.exports = {
   register: async (req, res, next) => {
@@ -74,9 +74,7 @@ module.exports = {
       return res.status(200).json({
         status: false,
         message: "success",
-        data: {
-          token: token,
-        },
+        data: { token },
       });
     } catch (err) {
       next(err);
@@ -85,7 +83,7 @@ module.exports = {
   registerKelas: async (req, res, next) => {
     try {
       const { nama, deskripsi, mentor_id, level } = req.body;
-      const { data } = await api.post("/register-kelas", {
+      const { data } = await api.post("/kelas/register", {
         nama,
         deskripsi,
         mentor_id,
@@ -114,7 +112,7 @@ module.exports = {
   findOneKelas: async (req, res, next) => {
     try {
       const { nama } = req.body;
-      const { data } = await api.post("/kelas-get", { nama });
+      const { data } = await api.get("/kelas-get", { nama });
 
       return res.status(200).json({
         status: true,
@@ -137,7 +135,7 @@ module.exports = {
   },
   findAllKelas: async (req, res, next) => {
     try {
-      const { data } = await api.post("/kelas-getAll");
+      const { data } = await api.get("/kelas");
 
       return res.status(200).json({
         status: true,
@@ -146,7 +144,8 @@ module.exports = {
       });
     } catch (err) {
       if (err.code == "ECONNREFUSED") {
-        err = new Error("service anvailable!");
+        err = new Error(KELAS_SERVICE_HOST);
+        // console.log(KELAS_SERVICE_HOST);
         return next(err);
       }
 
