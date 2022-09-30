@@ -63,13 +63,13 @@ module.exports = {
         });
       }
 
-      // generate token
-      payload = {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-      };
-      const token = jwt.sign(payload, JWT_SIGNATURE_KEY);
+      // payload = {
+      //   id: user.id,
+      //   name: user.name,
+      //   email: user.email,
+      // };
+
+      const token = jwt.sign(user, JWT_SIGNATURE_KEY);
 
       return res.status(200).json({
         status: false,
@@ -135,7 +135,7 @@ module.exports = {
   },
   findAllKelas: async (req, res, next) => {
     try {
-      const { data } = await api.get("/kelas");
+      const { data } = await api.get("/kelas_user");
 
       return res.status(200).json({
         status: true,

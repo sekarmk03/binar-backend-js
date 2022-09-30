@@ -6,6 +6,6 @@ router.post("/user/register", c.register);
 router.post("/user/login", c.login);
 
 router.post("/user/register-kelas", c.registerKelas);
-router.get("/auth/getAll", c.findAllKelas);
+router.get("/kelas_user", c.findAllKelas);
 
 module.exports = router;
