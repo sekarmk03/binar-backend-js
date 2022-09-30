@@ -16,10 +16,9 @@ module.exports = {
   },
   create: async (req, res, next) => {
     try {
-      const { id, user_id, kelas_id } = req.body;
+      const { user_id, kelas_id } = req.body;
 
       const data = await Kelas_user.create({
-        id,
         user_id,
         kelas_id,
       });

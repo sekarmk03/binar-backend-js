@@ -14,10 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Mentor.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     nama: DataTypes.STRING,
     pekerjaan: DataTypes.STRING
   }, {
