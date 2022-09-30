@@ -3,8 +3,8 @@ const router = express.Router();
 const h = require('../handlers');
 const utils = require('../utils');
 
-router.post('/auth', h.auth.register);
-router.post('/auth', h.auth.login);
+router.post('/auth/register', h.auth.register);
+router.post('/auth/login', h.auth.login);
 
 router.post('/mentor', utils.middleware.authUser, h.mentor.create);
 router.get('/mentor', utils.middleware.authUser, h.mentor.index);
