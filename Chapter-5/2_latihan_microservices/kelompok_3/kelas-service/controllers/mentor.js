@@ -1,8 +1,28 @@
 const { Mentor } = require("../db/models");
-const bcrypt = require("bcrypt");
-const { response } = require("express");
 
 module.exports = {
+  create: async (req, res, next) => {
+    try {
+      const { nama, pekerjaan } = req.body;
+
+      const mentor = await Mentor.create({
+        nama,
+        pekerjaan,
+      });
+
+      return res.status(201).json({
+        status: true,
+        message: "success",
+        data: {
+          id: mentor.id,
+          nama: mentor.nama,
+          pekerjaan: mentor.pekerjaan,
+        },
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
   findOne: async (req, res, next) => {
     try {
       const where = {};
@@ -26,30 +46,6 @@ module.exports = {
       }
 
       return res.status(200).json({
-        status: true,
-        message: "success",
-        data: {
-          id: mentor.id,
-          nama: mentor.nama,
-          pekerjaan: mentor.pekerjaan,
-        },
-      });
-    } catch (err) {
-      next(err);
-    }
-  },
-
-  create: async (req, res, next) => {
-    try {
-      const { nama, pekerjaan } = req.body;
-
-      const mentor = await Mentor.create({
-        id,
-        nama,
-        pekerjaan,
-      });
-
-      return res.status(201).json({
         status: true,
         message: "success",
         data: {

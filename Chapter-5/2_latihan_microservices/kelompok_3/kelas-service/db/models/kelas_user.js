@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Kelas_user.init({
-    id: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
     kelas_id: DataTypes.INTEGER
   }, {
