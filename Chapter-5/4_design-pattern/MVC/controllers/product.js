@@ -24,5 +24,25 @@ module.exports = {
         } catch (err) {
             next(err);
         }
-    }
+    },
+    show: async (req, res, next) => {
+        try {
+            const { id } = req.params;
+            const product = await Product.findOne({ where: { id } });
+
+            return res.render('product/detail', { product });
+        } catch (err) {
+            next(err);
+        }
+    },
+    destroy: async (req, res, next) => {
+        try {
+            const { id } = req.params;
+            await Product.destroy({ where: { id } });
+
+            return res.redirect('/products');
+        } catch (err) {
+            next(err);
+        }
+    },
 };

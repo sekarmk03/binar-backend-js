@@ -11,7 +11,8 @@
     <% products.forEach((product) => {%>
         <div>
             <p>------------------------------</p>
-            <b>Nama  : <%= product.name %></b>
+    
+            <b><a href='/products/<%= product.id %>'>Nama  : <%= product.name %></a></b>
             <p>Harga : <%= product.price %></p>
         </div>
     <%})%> 

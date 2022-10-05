@@ -4,11 +4,13 @@ const morgan = require('morgan');
 const port = process.env.HTTP_PORT;
 const app = express();
 const router = require('./routes');
+const methodOverride = require('method-override');
 
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use(morgan('dev'));
 app.set('view engine', 'ejs');
-app.use(express.urlencoded());
+app.use(methodOverride('_method'));
 app.use(router);
 
 app.use((req, res, next) => {
