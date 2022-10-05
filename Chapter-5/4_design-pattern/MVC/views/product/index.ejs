@@ -12,12 +12,12 @@
         <div>
             <p>------------------------------</p>
     
-            <b><a href='/products/<%= product.id %>'>Nama  : <%= product.name %></a></b>
+            <b>Nama  : <a href='/products/<%= product.id %>'><%= product.name %></a></b>
             <p>Harga : <%= product.price %></p>
         </div>
     <%})%> 
 
     <p>------------------------------</p>
-    <a href='/products/create'>Tambahkan produk</a>
+    <button><a href='/products/create'>Tambahkan produk</a></button>
 </body>
 </html>

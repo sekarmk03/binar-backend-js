@@ -7,7 +7,6 @@ module.exports = {
     store: async (req, res, next) => {
         try {
             const { name, price } = req.body;
-
             await Product.create({ name, price });
 
             return res.redirect('/products');
@@ -45,4 +44,27 @@ module.exports = {
             next(err);
         }
     },
+    edit: async (req, res, next) => {
+        try {
+            const { id } = req.params;
+            const product = await Product.findOne({ where: { id } });
+
+
+            return res.render('product/update', { product });
+        } catch (err) {
+            next(err);
+        }
+    },
+    update: async (req, res, next) => {
+        try {
+            const { id } = req.params;
+            const { name, price } = req.body;
+            await Product.update({ name, price }, { where: { id } });
+
+            return res.redirect(`/products/${id}`);
+
+        } catch (err) {
+            next(err);
+        }
+    }
 };
