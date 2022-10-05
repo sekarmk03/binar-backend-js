@@ -8,11 +8,19 @@ module.exports = {
         try {
             const { name, price } = req.body;
 
-            const product = await Product.create({ name, price });
+            await Product.create({ name, price });
 
-            res.send(product);
-            // return res.redirect('/products');
+            return res.redirect('/products');
 
+        } catch (err) {
+            next(err);
+        }
+    },
+    index: async (req, res, next) => {
+        try {
+            const products = await Product.findAll();
+
+            return res.render('product/index', { products });
         } catch (err) {
             next(err);
         }
