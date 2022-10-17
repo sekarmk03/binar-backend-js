@@ -1,0 +1,81 @@
+### CREATE KELAS
+POST http://localhost:3001/kelas/register
+Content-Type: application/json
+
+{
+    "nama": "kelas 2", 
+    "deskripsi" : "kelas nomer 2", 
+    "mentor_id": 2, 
+    "level" : "expert"
+}
+
+### FIND ALL KELAS
+GET  http://localhost:3001/kelas/getAll
+Content-Type: application/json
+
+### FIND ONE KELAS
+GET http://localhost:3001/kelas/get
+Content-Type: application/json
+
+{
+    "nama":"kelas 2"
+}
+
+### CREATE MENTOR
+POST http://localhost:3001/mentor/create
+Content-Type: application/json
+
+{
+    "id": 2, 
+    "nama": "Steve Rogers", 
+    "pekerjaan":"Avengers"
+}
+
+### GET MENTOR
+GET http://localhost:3001/mentor/get
+Content-Type: application/json
+
+{
+    "id": 2, 
+    "nama": "Steve Rogers", 
+    "pekerjaan":"Avengers"
+}
+
+### CREATE KELAS_USER
+POST http://localhost:3001/kelas_user/create
+Content-Type: application/json
+
+{
+    "id":3,
+    "user_id":3,
+    "kelas_id":3
+}
+
+### GET KELAS_USER
+GET http://localhost:3001/kelas_user
+Content-Type: application/json
+
+### CREATE USER
+POST http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "name":"Lewis Hamilton", 
+    "email":"lewis@gmail.com", 
+    "password":"qwerty123", 
+    "pekerjaan":"progammer"
+}
+
+### LOGIN 
+GET http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email":"lewis@gmail.com", 
+    "password":"qwerty123", 
+}
+
+### CREATE KELAS FROM GATEWAY
+GET http://localhost:3000/kelas_user
+Content-Type: application/json
+# Authorization: 
