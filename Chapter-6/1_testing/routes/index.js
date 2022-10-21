@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var base = require('../controllers/baseController');
+var auth = require('../controllers/authController');
+var mid = require('../helpers/middleware');
 
-/* GET home page. */
-router.get('/', base.index);
-router.post('/sum', base.sum);
+router.post('/auth/register', auth.register);
+router.post('/auth/login', auth.login);
+router.post('/auth/whoami', mid.mustLogin, auth.whoami);
 
 module.exports = router;
