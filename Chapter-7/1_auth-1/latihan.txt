@@ -1,0 +1,5 @@
+1. tambahkan column role kedalam model User
+2. role yang tersedia adalah [Superadmin, Admin, User]
+3. buat middleware dengan mengimplementasikan RBAC
+4. buat branch dengan nama masing2
+5. buat merge request
