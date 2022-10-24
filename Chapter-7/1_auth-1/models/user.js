@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
       const payload = {
         id: this.id,
         name: this.name,
-        email: this.email
+        email: this.email,
+        role: this.role
       };
 
       return jwt.sign(payload, process.env.JWT_SECRET_KEY);
@@ -45,7 +46,8 @@ module.exports = (sequelize, DataTypes) => {
   User.init({
     name: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    role: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',

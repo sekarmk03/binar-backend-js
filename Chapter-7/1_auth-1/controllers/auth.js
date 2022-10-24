@@ -1,10 +1,11 @@
 const { User } = require('../models');
 const bcrypt = require('bcrypt');
+const roles = require('../utils/roles');
 
 module.exports = {
     register: async (req, res, next) => {
         try {
-            const { name, email, password } = req.body;
+            const { name, email, password, role = roles.user } = req.body;
 
             const exist = await User.findOne({ where: { email } });
             if (exist) {
@@ -19,7 +20,8 @@ module.exports = {
             const newUser = await User.create({
                 name: name,
                 email: email,
-                password: hashed
+                password: hashed,
+                role: role
             });
 
             res.status(201).json({
@@ -48,6 +50,7 @@ module.exports = {
                     id: user.id,
                     name: user.name,
                     email: user.email,
+                    role: user.role,
                     access_token: accesstoken,
                 }
             });
@@ -66,7 +69,8 @@ module.exports = {
                 data: {
                     id: currentUser.id,
                     name: currentUser.name,
-                    email: currentUser.email
+                    email: currentUser.email,
+                    role: currentUser.role
                 }
             });
         } catch (err) {
