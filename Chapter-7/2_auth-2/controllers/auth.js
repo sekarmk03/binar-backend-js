@@ -38,5 +38,9 @@ module.exports = {
         successRedirect: '/',
         failureRedirect: '/auth/login',
         failureFlash: true
-    })
+    }),
+
+    whoami: (req, res) => {
+        res.render('whoami', { user: req.user });
+    }
 };
