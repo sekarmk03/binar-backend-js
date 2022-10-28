@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "7c7ceaed-dd13-4e40-a1aa-8ce8e9120c54",
+		"name": "Membuat dokumentasi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23669429"
+	},
+	"item": [
+		{
+			"name": "Contoh request pake postman",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"key1\":\"value1\",\"key2\":\"value2\",\"key3\":\"value3\"}"
+				},
+				"url": {
+					"raw": "http://httpbin.org/post",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
