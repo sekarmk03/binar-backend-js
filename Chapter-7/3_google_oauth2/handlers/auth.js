@@ -1,4 +1,5 @@
 const googleOauth2 = require('../utils/oauth2/google');
+const facebookOauth2 = require('../utils/oauth2/facebook');
 
 module.exports = {
     google: async (req, res, next) => {
@@ -29,5 +30,21 @@ module.exports = {
         } catch (err) {
             next(err);
         }
-    }
+    },
+
+    facebook: async (req, res, next) => {
+        try {
+            const code = req.query.code;
+
+            // form login jika code tidak ada
+            if (!code) {
+                const url = facebookOauth2.generateAuthURL();
+                return res.redirect(url);
+            }
+
+            return res.send('berhasil');
+        } catch (err) {
+            next(err);
+        }
+    },
 };
