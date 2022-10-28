@@ -1,44 +1,31 @@
-const { google } = require('googleapis');
-
-const {
-    OAUTH_REDIRECT_URI,
-    OAUTH_CLIENT_ID,
-    OAUTH_CLIENT_SECRET
-} = process.env;
-
-const oauth2Client = new google.auth.OAuth2(
-    OAUTH_CLIENT_ID,
-    OAUTH_CLIENT_SECRET,
-    OAUTH_REDIRECT_URI
-);
-
-function generateAuthURL() {
-    const scopes = [
-        'https://www.googleapis.com/auth/userinfo.email',
-        'https://www.googleapis.com/auth/userinfo.profile'
-    ];
-
-    const authUrl = oauth2Client.generateAuthUrl({
-        access_type: 'offline',
-        response_type: 'code',
-        scope: scopes
-    });
-
-    return authUrl;
-}
+const googleOauth2 = require('../utils/oauth2/google');
 
 module.exports = {
-    googleOauth2: (req, res, next) => {
+    google: async (req, res, next) => {
         try {
             const code = req.query.code;
 
+            // form login jika code tidak ada
             if (!code) {
-                const url = generateAuthURL();
-
+                const url = googleOauth2.generateAuthURL();
                 return res.redirect(url);
             }
 
-            res.send('berhasil login');
+            // get token
+            await googleOauth2.setCredentials(code);
+
+            // get data user
+            const { data } = await googleOauth2.getUserData();
+
+
+            // check apakah user email ada di database
+            // if !ada -> simpan data user
+
+            // generate token
+
+            // return token 
+
+            res.send(data);
         } catch (err) {
             next(err);
         }
