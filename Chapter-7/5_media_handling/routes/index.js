@@ -11,7 +11,15 @@ router.post('/upload/single', storage.single('media'), (req, res) => {
 });
 
 router.post('/upload/multiple', storage.array('media'), (req, res) => {
-    return res.json(req.files);
+
+    const files = []
+    req.files.forEach(file => {
+        const imageUrl = req.protocol + '://' + req.get('host') + '/images/' + file.filename;
+
+        files.push(imageUrl)
+    })
+
+    return res.json(files);
 });
 
 
