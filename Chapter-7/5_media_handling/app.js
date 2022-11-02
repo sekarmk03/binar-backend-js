@@ -25,25 +25,10 @@ Sentry.init({
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 app.use(morgan('dev'));
+app.use(express.json())
 
 app.use(router);
 app.use('/images', express.static('public/images'));
-
-// routes/handlers
-app.get('/test', (req, res) => {
-    try {
-        return res.send(user);
-    } catch (err) {
-        throw new Error(err);
-    }
-});
-
-app.get('/ok', (req, res) => {
-    const user = {
-        name: 'sabrina'
-    };
-    return res.send(user);
-});
 
 app.use(Sentry.Handlers.errorHandler());
 app.use(function onError(err, req, res, next) {

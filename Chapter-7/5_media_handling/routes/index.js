@@ -1,20 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const storage = require('../utils/storage');
+const h = require('../handlers');
+const restrict = require('../middlewares/restrict');
+const { User } = require('../models');
 
 const multer = require('multer');
 const upload = multer();
-const imagekit = require('../utils/imagekit');
 
-router.post('/upload/imagekit', upload.single('image'), async (req, res) => {
-    const file = req.file.buffer.toString("base64");
+router.post('/auth/register', h.auth.register);
+router.post('/auth/login', h.auth.login);
 
-    const uploadedFile = await imagekit.upload({
-        file,
-        fileName: req.file.originalname
-    });
+router.post('/upload/imagekit', restrict, upload.single('image'), h.media.upload);
+router.put('/users/update-avatar', restrict, h.user.updateAvatar);
+router.get('/users', restrict, async (req, res) => {
+    const user = req.user;
+    const userData = await User.findOne({ where: { id: user.id } });
 
-    return res.send(uploadedFile);
+    return res.send(userData);
 });
 
 router.post('/upload/single', storage.image.single('media'), (req, res) => {
