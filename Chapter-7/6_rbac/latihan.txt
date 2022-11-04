@@ -1,0 +1,22 @@
+Flow upload image profile :
+1. update model User => tambahkan field image
+2. buat model Media -> id, filename, file_url, user_id
+
+
+flow 1
+1. buat endpoint upload
+    req : image
+    res : image_url
+
+    - upload image ke imagekit
+    - simpan data image ke table Media
+    - balikan ke response
+
+2. buat endpoint update avatar
+    req : image_url
+    res : success
+
+    - update profile image
+
+3. buat endpoint get Media
+    - mengembalikan list media yang pernah di upload oleh user
