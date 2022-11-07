@@ -1,0 +1,40 @@
+{
+    "id": 7,
+    "notifications": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "title": "message baru dari aku",
+            "message": "ini message baru dari saya",
+            "isRead": false
+        },
+        {
+            "id": 4,
+            "user_id": "1",
+            "title": "baru nih",
+            "message": "oreo ice cream rasa jeruk",
+            "isRead": false
+        },
+        {
+            "id": 5,
+            "user_id": 1,
+            "title": "baru nih",
+            "message": "oreo ice cream rasa jeruk",
+            "isRead": false
+        },
+        {
+            "id": 6,
+            "user_id": 1,
+            "title": "baru nih 2",
+            "message": "oreo ice cream rasa jeruk purut",
+            "isRead": false
+        },
+        {
+            "id": 7,
+            "user_id": 2,
+            "title": "baru nih 2",
+            "message": "oreo ice cream rasa jeruk purut",
+            "isRead": false
+        }
+    ]
+}
