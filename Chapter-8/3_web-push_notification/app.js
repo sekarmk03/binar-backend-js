@@ -10,6 +10,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const webpush = require('web-push');
+const fs = require('fs');
 
 const app = express();
 
@@ -21,20 +22,19 @@ webpush.setVapidDetails(VAPID_SUBJECT, VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
 
 app.post('/notification/subscribe', async (req, res) => {
     try {
+        const subscriptions = require('./subscriptions.json');
         const subscription = req.body;
+
+        // save subscription data
+        subscriptions.push(subscription);
+        fs.writeFile('./subscriptions.json', JSON.stringify(subscriptions), (err) => {
+            console.log = (err);
+        });
 
         const payload = JSON.stringify({
             title: 'ada notif baru nih geys!',
             body: 'ini adalah detail dari notifikasinya'
         });
-
-        // const result = await webpush.sendNotification(subscription, payload);
-
-        // return res.status(200).json({
-        //     status: true,
-        //     message: '',
-        //     data: result
-        // });
 
         webpush.sendNotification(subscription, payload)
             .then(result => console.log(result))
@@ -48,6 +48,26 @@ app.post('/notification/subscribe', async (req, res) => {
             message: err.message
         });
     }
+});
+
+app.get('/send-notif', (req, res) => {
+    const subscriptions = require('./subscriptions.json');
+
+    const payload = JSON.stringify({
+        title: '11.11!',
+        body: 'ada promo 11.11 nih guys!'
+    });
+
+    // user_id : user.id
+    // data: JSON.stringify(subscription);
+
+    subscriptions.forEach(subscription => {
+        webpush.sendNotification(subscription, payload)
+            .then(result => console.log(result))
+            .catch(e => console.log(e.stack));
+    });
+
+    res.status(200).json({ 'success': true });
 });
 
 app.listen(HTTP_PORT, () => console.log('listening on port', HTTP_PORT));
