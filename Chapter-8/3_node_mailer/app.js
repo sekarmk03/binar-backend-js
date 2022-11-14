@@ -22,7 +22,6 @@ function sendEmail(to, subject, html) {
 
         try {
             const accessToken = await oauth2Client.getAccessToken();
-            console.log(accessToken);
 
             const transport = nodemailer.createTransport({
                 service: 'gmail',
@@ -58,5 +57,24 @@ async function main() {
         console.log(err);
     }
 }
-main()
+main();
+
+/*
+    endpoint forgot password -> http://localhost/forgot-password {email: user_email}
+*/
+// ambil user_email
+// findOne by email
+// generate token (user_id)
+// kirim token dan url ganti password ke email user -> http://localhost/reset_password?token=
+
+
+/*
+    endpoint reset password -> http://localhost/reset-password?token=  {new_password}
+*/
+// ambil token dan body data
+// extract/verify token -> dapatin payload { user_id}
+// validasi apakah user_id ada di database
+// bcrypt(password)
+// update user password where user_id = payload.user_id
+// success
 
