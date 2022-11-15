@@ -1,6 +1,7 @@
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
+const ejs = require('ejs');
 
 const {
     GOOGLE_REFRESH_TOKEN,
@@ -51,31 +52,28 @@ function sendEmail(to, subject, html) {
     });
 };
 
+async function getHtml(filename, data) {
+    return new Promise((resolve, reject) => {
+        const path = __dirname + '/views/' + filename;
+
+        ejs.renderFile(path, data, (err, data) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(data);
+            }
+        });
+    });
+}
+
 async function main() {
     try {
-        const response = await sendEmail('tromadhona@binaracademy.org', 'test gapakai express', '<h1>Halo aku nodejs</h1>');
+        const html = await getHtml('welcome.ejs', { user: { name: 'tatang' } });
+
+        await sendEmail('tromadhona@binaracademy.org', 'test gapakai express', html);
     } catch (err) {
         console.log(err);
     }
 }
 main();
-
-/*
-    endpoint forgot password -> http://localhost/forgot-password {email: user_email}
-*/
-// ambil user_email
-// findOne by email
-// generate token (user_id)
-// kirim token dan url ganti password ke email user -> http://localhost/reset_password?token=
-
-
-/*
-    endpoint reset password -> http://localhost/reset-password?token=  {new_password}
-*/
-// ambil token dan body data
-// extract/verify token -> dapatin payload { user_id}
-// validasi apakah user_id ada di database
-// bcrypt(password)
-// update user password where user_id = payload.user_id
-// success
 
