@@ -1,99 +1,37 @@
 require('dotenv').config();
-const nodemailer = require('nodemailer');
-const { google } = require('googleapis');
-const ejs = require('ejs');
-
 const {
-    GOOGLE_REFRESH_TOKEN,
-    GOOGLE_CLIENT_ID,
-    GOOGLE_CLIENT_SECRET,
-    GOOGLE_REDIRECT_URI,
-    GOOGLE_SENDER_EMAIL
+    HTTP_PORT = 3000
 } = process.env;
 
-const oauth2Client = new google.auth.OAuth2(
-    GOOGLE_CLIENT_ID,
-    GOOGLE_CLIENT_SECRET,
-    GOOGLE_REDIRECT_URI
-);
+const express = require('express');
+const morgan = require('morgan');
+const methodOverride = require('method-override');
 
-oauth2Client.setCredentials({ refresh_token: GOOGLE_REFRESH_TOKEN });
+const app = express();
+const router = require('./routes');
 
-function sendEmail(to, subject, html) {
-    return new Promise(async (resolve, reject) => {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
+app.use(router);
 
-        try {
-            const accessToken = await oauth2Client.getAccessToken();
-
-            const transport = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    type: 'OAuth2',
-                    user: GOOGLE_SENDER_EMAIL,
-                    clientId: GOOGLE_CLIENT_ID,
-                    clientSecret: GOOGLE_CLIENT_SECRET,
-                    refreshToken: GOOGLE_REFRESH_TOKEN,
-                    accessToken: accessToken
-                }
-            });
-
-            const mailOptions = {
-                to,
-                subject,
-                html
-            };
-
-            const response = await transport.sendMail(mailOptions);
-
-            resolve(response);
-        } catch (err) {
-            reject(err);
-        }
+app.use((req, res, next) => {
+    return res.json({
+        status: false,
+        message: 'are you lost?',
+        data: null
     });
-};
+});
 
-async function getHtml(filename, data) {
-    return new Promise((resolve, reject) => {
-        const path = __dirname + '/views/' + filename;
-
-        ejs.renderFile(path, data, (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(data);
-            }
-        });
+app.use((err, req, res, next) => {
+    console.log(err);
+    return res.json({
+        status: false,
+        message: err.message,
+        data: null
     });
-}
+});
 
-async function main() {
-    try {
-        const html = await getHtml('welcome.ejs', { user: { name: 'tatang' } });
-
-        await sendEmail('tromadhona@binaracademy.org', 'test gapakai express', html);
-    } catch (err) {
-        console.log(err);
-    }
-}
-main();
-
-/*
-    endpoint forgot password -> http://localhost/forgot-password {email: user_email}
-*/
-// ambil user_email
-// findOne by email
-// generate token (user_id)
-// kirim token dan url ganti password ke email user -> http://localhost/reset_password?token=
-
-
-/*
-    endpoint reset password -> http://localhost/reset-password?token=  {new_password}
-*/
-// ambil token dan body data
-// extract/verify token -> dapatin payload { user_id}
-// validasi apakah user_id ada di database
-// bcrypt(password)
-// update user password where user_id = payload.user_id
-// success
-
-
+app.listen(HTTP_PORT, () => console.log('listening on port', HTTP_PORT));
