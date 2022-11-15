@@ -6,7 +6,8 @@ const {
     GOOGLE_REFRESH_TOKEN,
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
-    GOOGLE_REDIRECT_URI
+    GOOGLE_REDIRECT_URI,
+    GOOGLE_SENDER_EMAIL
 } = process.env;
 
 const oauth2Client = new google.auth.OAuth2(
@@ -27,7 +28,7 @@ function sendEmail(to, subject, html) {
                 service: 'gmail',
                 auth: {
                     type: 'OAuth2',
-                    user: 'itsme@tatang.dev',
+                    user: GOOGLE_SENDER_EMAIL,
                     clientId: GOOGLE_CLIENT_ID,
                     clientSecret: GOOGLE_CLIENT_SECRET,
                     refreshToken: GOOGLE_REFRESH_TOKEN,
