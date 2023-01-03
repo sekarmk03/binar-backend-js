@@ -1,22 +1,37 @@
 {
   "development": {
-    "username": "tatangdev",
-    "password": "aandeani",
+    "username": "postgres",
+<<<<<<< HEAD
+    "password": "skrmk372",
     "database": "userservice",
+=======
+    "password": "root",
+    "database": "remake_kelompok",
+>>>>>>> f41b80e5cca6f2ed799d0264f4b40b61784fb758
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "tatangdev",
-    "password": "aandeani",
+    "username": "postgres",
+<<<<<<< HEAD
+    "password": "skrmk372",
     "database": "userservice",
+=======
+    "password": "root",
+    "database": "remake_kelompok",
+>>>>>>> f41b80e5cca6f2ed799d0264f4b40b61784fb758
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "tatangdev",
-    "password": "aandeani",
+    "username": "postgres",
+<<<<<<< HEAD
+    "password": "skrmk372",
     "database": "userservice",
+=======
+    "password": "root",
+    "database": "remake_kelompok",
+>>>>>>> f41b80e5cca6f2ed799d0264f4b40b61784fb758
     "host": "localhost",
     "dialect": "postgres"
   }

@@ -1,2 +1,4 @@
 .env
 node_modules
+external
+external/database.json
